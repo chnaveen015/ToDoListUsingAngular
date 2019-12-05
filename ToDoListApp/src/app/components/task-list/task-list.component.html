@@ -1,0 +1,35 @@
+<div class="container">
+    <H2 class="title">{{name.toUpperCase()}}'S TO DO LIST </H2>
+    <div class='add-todo-item'>
+        <input type="text" [(ngModel)]="task">
+        <button (click)="addTask()" class="addTask">+</button>
+    </div>
+    <br> <br>
+    <table class="todolist">
+        <tr>
+            <th>
+            </th>
+            <th>
+                ToDoList 
+            </th>
+            <th>
+                Action
+            </th>
+        <tr *ngFor="let todo of toDoList.tasks">
+            <td><input type="checkbox" [(ngModel)]="todo.completed" (click)="taskCompleted(todo,toDoList.tasks)"></td>
+            <td *ngIf="!todo.editing;else editingTodo" [ngClass]="{'completed':todo.completed}"
+                (dblclick)="editTodo(todo,todos)">
+                {{todo.taskName}}
+            </td>
+            <ng-template #editingTodo>
+                <input type="text" class="todo-item-edit" [(ngModel)]="todo.taskName"
+                    (keyup.enter)="editTodo(todo,toDoList.tasks)" autofocus>
+
+            </ng-template>
+            <td>
+                <button class="deleteButton" (click)="deleteItem(todo);">x</button>
+            </td>
+        </tr>
+    </table>
+    <br><button routerLink=''>Home</button>
+</div>

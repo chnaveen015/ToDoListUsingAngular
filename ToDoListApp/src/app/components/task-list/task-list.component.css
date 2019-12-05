@@ -1,0 +1,38 @@
+.container{
+    text-align: center;
+    border-color: crimson;
+}
+.title{
+    background-color:cornflowerblue;
+    
+
+}
+.add-todo-item{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.todolist{
+    text-align: justify;
+    border:1px solid black;
+    padding: 4px;
+    border-spacing: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color:lightslategray;
+}
+.completed {
+    text-decoration: line-through;
+    color:black;
+  }
+  .deleteButton{
+    font-size:20px;
+    color:red;
+    border-radius: 10%;
+    background-color:grey;
+  }
+  .addTask{
+    font-size:20px;
+    color:green;
+    border-radius: 20%;
+  }
